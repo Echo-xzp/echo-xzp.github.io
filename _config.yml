@@ -5,15 +5,17 @@
 # Site
 title: "夏虫不可语冰;"
 subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+description: '井蛙不可语于海。'
+keywords: 
+author: Echo
+language: zh-TW
+timezone: 'Asia/Shanghai'
+email: 2838985911@qq.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://example.com
+url: http://blog.echoes.work/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
