@@ -1,7 +1,8 @@
 ---
 title: Hexo博客搭建
 date: 2023-05-16 10:33:29
-tags: hexo blog
+tags: ["Hexo","个人博客"]
+categories: 杂项
 ---
 
 # Hexo博客搭建
@@ -113,7 +114,7 @@ github pages最大的問題就是在國内訪問速度實在太慢了，其實�
 
 效果圖：
 
-![](https://fastly.jsdelivr.net/gh/Echo-xzp/Resource/img/blog-speed.png)
+![](https://cdn.jsdelivr.net/gh/Echo-xzp/Resource/img/blog-speed.png)
 
 
 
