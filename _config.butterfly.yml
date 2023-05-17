@@ -72,7 +72,7 @@ archive_img:
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img:  /img/bg.png
+tag_img:  /img/cover2.png
 
 # The banner image of tag page
 # format:
@@ -81,12 +81,15 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img:
+category_img: /img/cover9.png
 
 # The banner image of category page
 # format:
 #  - category name: xxxxx
 category_per_img:
+  - Java: /img/cover7.png
+  - 杂项: /img/cover8.png
+  - Linux: /img/arch.png
 
 cover:
   # display the cover or not (是否顯示文章封面)
@@ -95,7 +98,7 @@ cover:
   archives_enable: true
   # the position of cover in home page (封面顯示的位置)
   # left/right/both
-  position: both
+  position: left
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
@@ -103,6 +106,11 @@ cover:
     - /img/cover2.png
     - /img/cover3.png
     - /img/cover4.png
+    - /img/cover5.png
+    - /img/cover6.png
+    - /img/cover7.png
+    - /img/cover8.png
+
 
 # Replace Broken Images (替換無法顯示的圖片)
 error_img:

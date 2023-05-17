@@ -3,6 +3,7 @@ title: Hexo博客搭建
 date: 2023-05-16 10:33:29
 tags: ["Hexo","个人博客"]
 categories: 杂项
+cover: /img/cover2.png
 ---
 
 # Hexo博客搭建
