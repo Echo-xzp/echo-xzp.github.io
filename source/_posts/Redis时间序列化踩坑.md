@@ -2,7 +2,7 @@
 title: Redis时间序列化踩坑
 date: 2022-08-13 08:26:48
 tags: ["Java","JavaWeb","Redis","Spring"]
-cacategories: Java
+categories: Java
 ---
 
 

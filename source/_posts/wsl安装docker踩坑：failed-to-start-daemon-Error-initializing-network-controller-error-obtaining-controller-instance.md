@@ -3,8 +3,8 @@ title: >-
   wsl2安装docker报错：failed to start daemon: Error initializing network controller:
   error obtaining controller instance
 date: 2022-08-30 13:12:14
-tags: wsl 
-categories: 杂项
+tags: [wsl,linux]
+categories: Linux
 cover: /img/cover6.png
 ---
 
