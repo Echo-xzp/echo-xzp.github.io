@@ -618,8 +618,8 @@ google_adsense:
 # --------------------------------------
 
 site_verification:
-  # - name: google-site-verification
-  #   content: xxxxxx
+  - name: google-site-verification
+    content: GBnsApiVlX_GAs83_g9LEdVT1f3EyhENspoXIyoYuC0
   # - name: baidu-site-verification
   #   content: xxxxxxx
   - name: bing-site-verification
