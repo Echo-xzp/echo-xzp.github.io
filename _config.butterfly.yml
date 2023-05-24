@@ -314,7 +314,7 @@ newest_comments:
 
 # Conversion between Traditional and Simplified Chinese (簡繁轉換)
 translate:
-  enable: false
+  enable: true
   # The text of a button
   default: 繁
   # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese）
@@ -622,6 +622,8 @@ site_verification:
   #   content: xxxxxx
   # - name: baidu-site-verification
   #   content: xxxxxxx
+  - name: bing-site-verification
+    content: 09FFC24C01F99D0131681531C3BC3A14
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
