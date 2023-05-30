@@ -54,7 +54,7 @@ nacos.core.auth.plugin.nacos.token.secret.key=SecretKey0123456789012345678901234
 
 配置`docker-compose.yaml`:
 
-![image-20230530152424401](C:\Users\xiao\AppData\Roaming\Typora\typora-user-images\image-20230530152424401.png)
+![image-20230530152424401](https://fastly.jsdelivr.net/gh/Echo-xzp/Resource/img/image-20230530152424401.png)
 
 使用`docker-compose`构建容器：
 
