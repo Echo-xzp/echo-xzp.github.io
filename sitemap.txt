@@ -12,6 +12,7 @@ http://blog.echoes.work/2023/05/23/%E6%8E%A5%E5%85%A5SpringBootAdmin%E7%9A%84%E8
 http://blog.echoes.work/2022/10/09/%E8%A7%A3%E5%86%B3Java%E6%89%93%E5%8C%85%E5%90%8E%E8%BD%AC%E7%A0%81%E9%94%99%E8%AF%AF/
 http://blog.echoes.work/2023/04/28/%E8%A7%A3%E5%86%B3Linux-lightdm%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/
 http://blog.echoes.work/2023/03/10/%E8%A7%A3%E5%86%B3Lombok%E5%BC%95%E8%B5%B7%E7%9A%84spring-test%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%8A%A5%E9%94%99/
+http://blog.echoes.work/2023/05/06/%E8%A7%A3%E5%86%B3MySQL%E7%89%88%E6%9C%AC%E2%80%98sql-mode-only-full-group-by%E2%80%99%E5%BC%95%E8%B5%B7%E7%9A%84%E6%9F%A5%E8%AF%A2%E9%94%99%E8%AF%AF/
 http://blog.echoes.work/2023/04/02/%E8%A7%A3%E5%86%B3MybatisPlus%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E7%9A%84%E9%97%AE%E9%A2%98/
 http://blog.echoes.work/2023/03/09/%E8%A7%A3%E5%86%B3Spring%E4%B8%ADmaven%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/
 http://blog.echoes.work/2023/04/10/%E8%A7%A3%E5%86%B3Spring%E5%AE%B9%E5%99%A8%E8%87%AA%E8%B0%83%E5%BC%95%E8%B5%B7%E7%9A%84%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81/
@@ -45,6 +46,7 @@ http://blog.echoes.work/tags/Spring-Boot-Admin/
 http://blog.echoes.work/tags/Spring-Boot-Actuator/
 http://blog.echoes.work/tags/lightdm/
 http://blog.echoes.work/tags/Java-Web/
+http://blog.echoes.work/tags/mysql/
 http://blog.echoes.work/tags/Mybatis/
 http://blog.echoes.work/tags/Mybatis-Plus/
 http://blog.echoes.work/tags/spring/
@@ -53,7 +55,6 @@ http://blog.echoes.work/tags/Spring-%E4%BA%8B%E5%8A%A1/
 http://blog.echoes.work/tags/nacos/
 http://blog.echoes.work/tags/Spring-Cloud/
 http://blog.echoes.work/tags/Spring-Cloud-Alibaba/
-http://blog.echoes.work/tags/mysql/
 http://blog.echoes.work/tags/%E5%89%8D%E7%AB%AF/
 http://blog.echoes.work/tags/nodejs/
 http://blog.echoes.work/tags/Spring-CLoud/
