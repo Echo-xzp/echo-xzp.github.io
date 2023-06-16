@@ -7,6 +7,7 @@ http://blog.echoes.work/2023/04/07/Spring-Maven%E6%A8%A1%E5%9D%97%E4%BE%9D%E8%B5
 http://blog.echoes.work/2023/05/29/docker%E4%B8%80%E8%88%AC%E7%94%A8%E6%88%B7%E5%8E%BB%E6%8E%89sudo%E6%9D%83%E9%99%90%E7%9A%84%E6%96%B9%E6%B3%95/
 http://blog.echoes.work/2023/05/07/hello-world/
 http://blog.echoes.work/2022/08/30/wsl%E5%AE%89%E8%A3%85docker%E8%B8%A9%E5%9D%91%EF%BC%9Afailed-to-start-daemon-Error-initializing-network-controller-error-obtaining-controller-instance/
+http://blog.echoes.work/2023/06/16/%E4%B9%A0%E6%A6%82%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/
 http://blog.echoes.work/2023/05/23/%E6%8E%A5%E5%85%A5SpringBootAdmin%E7%9A%84%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/
 http://blog.echoes.work/2022/10/09/%E8%A7%A3%E5%86%B3Java%E6%89%93%E5%8C%85%E5%90%8E%E8%BD%AC%E7%A0%81%E9%94%99%E8%AF%AF/
 http://blog.echoes.work/2023/04/28/%E8%A7%A3%E5%86%B3Linux-lightdm%E6%9C%8D%E5%8A%A1%E6%97%A0%E6%B3%95%E5%90%AF%E5%8A%A8%E9%97%AE%E9%A2%98/
@@ -36,6 +37,9 @@ http://blog.echoes.work/tags/docker/
 http://blog.echoes.work/tags/Arch-Linux/
 http://blog.echoes.work/tags/wsl/
 http://blog.echoes.work/tags/linux/
+http://blog.echoes.work/tags/%E5%A4%8D%E4%B9%A0/
+http://blog.echoes.work/tags/%E7%AC%94%E8%AE%B0/
+http://blog.echoes.work/tags/%E4%B9%A0%E6%A6%82/
 http://blog.echoes.work/tags/Spring-Boot/
 http://blog.echoes.work/tags/Spring-Boot-Admin/
 http://blog.echoes.work/tags/Spring-Boot-Actuator/
