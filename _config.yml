@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: "夏虫不可语冰;"
+title: "你所不知道的物語;"
 subtitle: ''
-description: '井蛙不可语于海。'
+description: '萌之上，即爲蕩漾。'
 keywords: 
-author: Echo
+author: Hitagi
 language: zh-TW
 timezone: 'Asia/Shanghai'
 email: 2838985911@qq.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: http://blog.echoes.work/
+url: 'https://hitagi.icu'
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
