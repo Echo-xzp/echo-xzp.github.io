@@ -620,11 +620,11 @@ google_adsense:
 
 site_verification:
   - name: google-site-verification
-    content: GBnsApiVlX_GAs83_g9LEdVT1f3EyhENspoXIyoYuC0
+    content: 6WfdBOZ8Sr9V_IZT_sfj_zJMJeYq3Ws4sKkOJijP3d0
   # - name: baidu-site-verification
   #   content: xxxxxxx
   - name: bing-site-verification
-    content: 09FFC24C01F99D0131681531C3BC3A14
+    content: B3C314E03131C0B2AC64292C8DB4FF87
 
 # Beautify/Effect (美化/效果)
 # --------------------------------------
