@@ -669,7 +669,7 @@ tag_ui: # 留空或 index
 # background: /img/bg1.png
 
 # Footer Background
-footer_bg: false
+footer_bg: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%)
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom:
