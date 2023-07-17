@@ -14,7 +14,7 @@ email: 2838985911@qq.com
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: 'https://hitagi.icu'
+url: 'https://www.hitagi.icu'
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:

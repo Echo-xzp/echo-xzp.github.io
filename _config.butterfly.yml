@@ -669,7 +669,7 @@ tag_ui: # 留空或 index
 # background: /img/bg1.png
 
 # Footer Background
-footer_bg: linear-gradient( 135deg, #E2B0FF 10%, #9F44D3 100%)
+footer_bg: linear-gradient(135deg,#E2B0FF 10%,#9F44D3 100%)
 
 # the position of bottom right button/default unit: px (右下角按鈕距離底部的距離/默認單位為px)
 rightside-bottom:
@@ -786,7 +786,7 @@ subtitle:
   source: false
   # 如果關閉打字效果，subtitle 只會顯示 sub 的第一行文字
   sub:
-    - 要是能流行起來就好
+    - 要是能流行起來就好了
     - 『 戰場原，蕩漾。 』
     - 萌之上，即爲蕩漾。
 
