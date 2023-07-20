@@ -218,7 +218,7 @@ public class WXTextMessage extends WXMessage {
 
 使用我自己写的工具类的时候报错：
 
-![image-20230720112053365](https://fastly.jsdelivr.net/gh/Echo-xzp/Resource/img/image-20230720112053365.png)
+![image-20230720112053365](https://gitlab.com/Echo-xzp/Resource/-/raw/main/img/2023/07/20_12_23_12_image-20230720112053365.png)
 
 明显是根节点无法读取，本来我以为父类声明了`@XmlRootElement(name = "xml")`，他的子类应该都带有这个注解的效果了，结果就报错了。
 
@@ -243,17 +243,17 @@ public class WXTextMessage extends WXMessage {
 
 结果发现出现了新的报错：
 
-![image-20230720112933842](https://fastly.jsdelivr.net/gh/Echo-xzp/Resource/img/image-20230720112933842.png)
+![image-20230720112933842](https://gitlab.com/Echo-xzp/Resource/-/raw/main/img/2023/07/20_12_24_7_image-20230720112933842.png)
 
 类型转换错误？还是父类无法往子类转换。这怎么就变父类了呢，我都是直接把子类的`Class`传进去的啊，打上断点调试一波看看：
 
-![image-20230720115807447](https://fastly.jsdelivr.net/gh/Echo-xzp/Resource/img/image-20230720115807447.png)
+![image-20230720115807447](https://gitlab.com/Echo-xzp/Resource/-/raw/main/img/2023/07/20_12_24_38_image-20230720115807447.png)
 
 这下更加糊涂了，可见传入的`obj`对象是子类类型，调用`unmarshaller`方法后转出来的竟然是它的父类！
 
 博主思前想后，不懂其中的奥义，秉着~~排列组合~~的思想，既然父子类都标记，只有父类标记都用了，那就试试**只有子类标记**吧。好家伙，试一下就直接给我解决了。
 
-![image-20230720120540937](https://fastly.jsdelivr.net/gh/Echo-xzp/Resource/img/image-20230720120540937.png)
+![image-20230720120540937](https://gitlab.com/Echo-xzp/Resource/-/raw/main/img/2023/07/20_12_25_13_image-20230720120540937.png)
 
 好好好，一下就给我解决了。
 
