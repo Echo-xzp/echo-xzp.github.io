@@ -1,4 +1,4 @@
-image: node:10-alpine # use nodejs v10 LTS
+image: node:18-alpine # use nodejs v10 LTS
 cache:
   paths:
     - node_modules/
@@ -9,6 +9,7 @@ before_script:
 
 pages:
   script:
+    - hexo clean
     - hexo generate
   artifacts:
     paths:
