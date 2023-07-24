@@ -160,7 +160,7 @@ public abstract class WXMessage implements Serializable {
 
 工具类里给结果的尖括号修正一下就好了。。。
 
-## 深层次问题
+# 深层次问题
 
 代码实现简单，就是用了JAXB的转换工具。博主遇到的问题主要是在XML映射的对象上。
 
