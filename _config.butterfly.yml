@@ -72,7 +72,7 @@ archive_img: img/bg.png
 
 # If the banner of tag page not setting, it will show the top_img
 # note: tag page, not tags page (子標籤頁面的 top_img)
-tag_img: img/cover7.png
+tag_img: img/tag.jpg
 
 # The banner image of tag page
 # format:
@@ -81,7 +81,7 @@ tag_per_img:
 
 # If the banner of category page not setting, it will show the top_img
 # note: category page, not categories page (子分類頁面的 top_img)
-category_img: img/cover1.png
+category_img: img/category.png
 
 # The banner image of category page
 # format:
