@@ -1,0 +1,214 @@
+<!DOCTYPE html><html lang="zh-TW" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>由JS引发的对异步/同步与阻塞/非阻塞的思考 | 夏虫不可语冰;</title><meta name="author" content="Echo,2838985911@qq.com"><meta name="copyright" content="Echo"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="ffffff"><meta name="description" content="问题发现博主暑假被抓去写前端去了，JS其实也就只会写一点点，就是当初学Java Web的时候过了一遍，高级点的用法压根不会，平时做项目也最多改改字段映射，因此在开发过程中遇到了一些莫名其妙的问题。首先博主被安排的工作是改微信小程序的界面Bug，说起来微信小程序也是当初实验室帮老师做项目的时候糊里糊涂地对着文档学了几天，由于后面又没做那个项目了，所以其实微信小程序也没写几天。于是上个星期搞开发的时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="由JS引发的对异步&#x2F;同步与阻塞&#x2F;非阻塞的思考">
+<meta property="og:url" content="http://blog.echoes.work/2023/07/11/%E7%94%B1js%E5%BC%95%E5%8F%91%E7%9A%84%E5%AF%B9%E5%BC%82%E6%AD%A5-%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%98%BB%E5%A1%9E-%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%9A%84%E6%80%9D%E8%80%83/index.html">
+<meta property="og:site_name" content="夏虫不可语冰;">
+<meta property="og:description" content="问题发现博主暑假被抓去写前端去了，JS其实也就只会写一点点，就是当初学Java Web的时候过了一遍，高级点的用法压根不会，平时做项目也最多改改字段映射，因此在开发过程中遇到了一些莫名其妙的问题。首先博主被安排的工作是改微信小程序的界面Bug，说起来微信小程序也是当初实验室帮老师做项目的时候糊里糊涂地对着文档学了几天，由于后面又没做那个项目了，所以其实微信小程序也没写几天。于是上个星期搞开发的时候">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="http://blog.echoes.work/img/cover8.png">
+<meta property="article:published_time" content="2023-07-11T07:05:42.000Z">
+<meta property="article:modified_time" content="2023-07-26T03:02:00.611Z">
+<meta property="article:author" content="Echo">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="JS">
+<meta property="article:tag" content="异步">
+<meta property="article:tag" content="同步">
+<meta property="article:tag" content="阻塞">
+<meta property="article:tag" content="非阻塞">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.echoes.work/img/cover8.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="http://blog.echoes.work/2023/07/11/%E7%94%B1js%E5%BC%95%E5%8F%91%E7%9A%84%E5%AF%B9%E5%BC%82%E6%AD%A5-%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%98%BB%E5%A1%9E-%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%9A%84%E6%80%9D%E8%80%83/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="GBnsApiVlX_GAs83_g9LEdVT1f3EyhENspoXIyoYuC0"/><meta name="bing-site-verification" content="09FFC24C01F99D0131681531C3BC3A14"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '複製成功',
+    error: '複製錯誤',
+    noSupport: '瀏覽器不支援'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '剛剛',
+    min: '分鐘前',
+    hour: '小時前',
+    day: '天前',
+    month: '個月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '由JS引发的对异步/同步与阻塞/非阻塞的思考',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-07-26 11:02:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">載入中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/cover8.png')"><nav id="nav"><span id="blog-info"><a href="/" title="夏虫不可语冰;"><span class="site-name">夏虫不可语冰;</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首頁</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 時間軸</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 標籤</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分類</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友鏈</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 關於</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">由JS引发的对异步/同步与阻塞/非阻塞的思考</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">發表於</span><time class="post-meta-date-created" datetime="2023-07-11T07:05:42.000Z" title="發表於 2023-07-11 15:05:42">2023-07-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新於</span><time class="post-meta-date-updated" datetime="2023-07-26T03:02:00.611Z" title="更新於 2023-07-26 11:02:00">2023-07-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%9D%82%E9%A1%B9/">杂项</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="由JS引发的对异步/同步与阻塞/非阻塞的思考"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">閱讀量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="问题发现"><a href="#问题发现" class="headerlink" title="问题发现"></a>问题发现</h1><p>博主暑假被抓去写前端去了，JS其实也就只会写一点点，就是当初学Java Web的时候过了一遍，高级点的用法压根不会，平时做项目也最多改改字段映射，因此在开发过程中遇到了一些莫名其妙的问题。首先博主被安排的工作是改微信小程序的界面Bug，说起来微信小程序也是当初实验室帮老师做项目的时候糊里糊涂地对着文档学了几天，由于后面又没做那个项目了，所以其实微信小程序也没写几天。于是上个星期搞开发的时候就遇到了平时Java开发中从来没有遇到的问题。</p>
+<p>首先是我要干的事是根据微信接口获取坐标信息，然后根据坐标信息进行相应处理，代码大概是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">var that = this</span><br><span class="line">wx.getLocation(&#123;</span><br><span class="line">              altitude:true,</span><br><span class="line">              success: (res) =&gt;&#123;</span><br><span class="line">                var e = &#123;detail:&#123;longitude:res.longitude,latitude:res.latitude&#125;&#125;</span><br><span class="line">                </span><br><span class="line">                // Do Something</span><br><span class="line">               </span><br><span class="line">               that.setData(&#123;pos:e&#125;)</span><br><span class="line"></span><br><span class="line">              &#125;,</span><br><span class="line">              fail: (res) =&gt;&#123;</span><br><span class="line">              	// 获取定位失败，设置默认值</span><br><span class="line">                var e = &#123;detail:&#123;longitude:upStation.longitude,latitude:upStation.latitude&#125;&#125;</span><br><span class="line">                </span><br><span class="line">                // Do Something</span><br><span class="line">                </span><br><span class="line">                that.setData(&#123;pos:e&#125;)</span><br><span class="line">				</span><br><span class="line">              &#125;          </span><br><span class="line">            &#125;)</span><br><span class="line">            </span><br><span class="line">var pos = that.data.pos</span><br><span class="line">// 对pos进行处理</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>代码很简单，看起来无论调用接口成功还是失败，变量<code>pos</code>都应该有值的，但是调试起来我却发现<code>pos</code>始终为空值，习惯于Java开发的我一时间糊涂了，变量的值到底为什么为空呢？仔细观察控制台日志，我忽然发现打印<code>pos</code>时，下面的打印竟然优先于上面的打印，难道说程序并不是一行一行的走下来运行的？上网一搜，在<a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/app-service/api.html#API">微信官方文档</a>中有这样一段话：</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitlab.com/Echo-xzp/Resource/-/raw/main/img/2023/07/11_15_41_43_image-20230711153500995.png" alt="image-20230711153500995"></p>
+<p>也就是说<em><strong>大部分微信的接口都是异步调用的</strong></em>，在调用获取定位的接口时，程序并不会阻塞而是继续往下执行，这个时候<code>pos</code>变量压根没被赋值，所以就一直报错为空！</p>
+<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><p>既然知道是异步调用引起的问题，那么解决方法其实很简单了。用于博主JS水平有限，我讲的肯定没别人明白，参见其他人的博文：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/28e5ef0ebc44">js 异步的几种解决方案 - 简书 </a>、<a target="_blank" rel="noopener" href="https://juejin.cn/post/7067891660545327111">JS 异步编程的 5 种解决方案 - 掘金</a>，比我讲的更加明白清晰，但是我看总结起来也就几种：</p>
+<ul>
+<li><p>直接把处理逻辑写在异步请求之中，当然这只适用于简单的业务，复杂起来，比如异步里面套异步，回调函数杂揉起来，那简直就是地狱了</p>
+</li>
+<li><p>使用ES6的<code>Promise</code>,对业务进行链式调用</p>
+</li>
+<li><p>使用<code>async/await</code></p>
+</li>
+</ul>
+<p>其实这些问题应该算是前端最基本的要掌握的了，奈何楼主水平有限，也算踩了一次坑吧。</p>
+<h1 id="问题拓展"><a href="#问题拓展" class="headerlink" title="问题拓展"></a>问题拓展</h1><p>讲到了异步，那为什么要用异步呢？异步和同步又有什么区别呢？<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/22707398">完全理解同步&#x2F;异步与阻塞&#x2F;非阻塞 - 知乎 </a>上这个回答感觉讲的通俗易懂，总结起来也就是:</p>
+<ul>
+<li>异步与同步强调的是消息传递。同步是指调用者主动去监测被调者的状态；异步是指被调者将自己的状态主动告诉它的调用者。</li>
+<li>阻塞与非阻塞强调的是执行的返回状态。阻塞就是调用者在调用其他资源的时候直接挂起，等待资源的到来；非阻塞就是调用者直接返回，不等待资源，返回去做其他的事情。</li>
+</ul>
+<p>至于在Java中，我所熟悉的就是多线程，创立多线程可以实现异步的效果，至于Java的异步非阻塞框架深入起来内容太多了要讲的了。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://blog.echoes.work">Echo</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章連結: </span><span class="post-copyright-info"><a href="http://blog.echoes.work/2023/07/11/%E7%94%B1js%E5%BC%95%E5%8F%91%E7%9A%84%E5%AF%B9%E5%BC%82%E6%AD%A5-%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%98%BB%E5%A1%9E-%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%9A%84%E6%80%9D%E8%80%83/">http://blog.echoes.work/2023/07/11/%E7%94%B1js%E5%BC%95%E5%8F%91%E7%9A%84%E5%AF%B9%E5%BC%82%E6%AD%A5-%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%98%BB%E5%A1%9E-%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%9A%84%E6%80%9D%E8%80%83/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版權聲明: </span><span class="post-copyright-info">本部落格所有文章除特別聲明外，均採用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 許可協議。轉載請註明來自 <a href="http://blog.echoes.work" target="_blank">夏虫不可语冰;</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/JS/">JS</a><a class="post-meta__tags" href="/tags/%E5%BC%82%E6%AD%A5/">异步</a><a class="post-meta__tags" href="/tags/%E5%90%8C%E6%AD%A5/">同步</a><a class="post-meta__tags" href="/tags/%E9%98%BB%E5%A1%9E/">阻塞</a><a class="post-meta__tags" href="/tags/%E9%9D%9E%E9%98%BB%E5%A1%9E/">非阻塞</a></div><div class="post_share"><div class="social-share" data-image="/img/cover8.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/07/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%91%E9%80%81http%E8%AF%B7%E6%B1%82%E6%97%B6JsonObject%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5%E8%B8%A9%E5%9D%91/" title="多线程发送http请求时JsonObject数据不同步踩坑"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover8.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">多线程发送http请求时JsonObject数据不同步踩坑</div></div></a></div><div class="next-post pull-right"><a href="/2023/06/16/%E4%B9%A0%E6%A6%82%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/" title="湖南师大习概复习总结"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover4.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">湖南师大习概复习总结</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相關推薦</span></div><div class="relatedPosts-list"><div><a href="/2022/07/19/Java-Web%E9%A1%B9%E7%9B%AE%E5%AD%A6%E4%B9%A0%E8%B8%A9%E5%9D%91/" title="Java Web项目学习踩坑"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover5.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-07-20</div><div class="title">Java Web项目学习踩坑</div></div></a></div><div><a href="/2022/08/13/Redis%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97%E5%8C%96%E8%B8%A9%E5%9D%91/" title="Redis时间序列化踩坑"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover4.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-08-13</div><div class="title">Redis时间序列化踩坑</div></div></a></div><div><a href="/2023/07/20/%E5%88%A9%E7%94%A8JAXB%E5%B0%86XML%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8CJava%E5%AF%B9%E8%B1%A1%E4%BA%92%E8%BD%AC%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="利用JAXB将XML字符串和Java对象互转学习记录"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover7.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-20</div><div class="title">利用JAXB将XML字符串和Java对象互转学习记录</div></div></a></div><div><a href="/2023/07/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%91%E9%80%81http%E8%AF%B7%E6%B1%82%E6%97%B6JsonObject%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5%E8%B8%A9%E5%9D%91/" title="多线程发送http请求时JsonObject数据不同步踩坑"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover8.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-07-18</div><div class="title">多线程发送http请求时JsonObject数据不同步踩坑</div></div></a></div><div><a href="/2022/10/09/%E8%A7%A3%E5%86%B3Java%E6%89%93%E5%8C%85%E5%90%8E%E8%BD%AC%E7%A0%81%E9%94%99%E8%AF%AF/" title="解决Java打包后转码错误"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-09</div><div class="title">解决Java打包后转码错误</div></div></a></div><div><a href="/2023/03/10/%E8%A7%A3%E5%86%B3Lombok%E5%BC%95%E8%B5%B7%E7%9A%84spring-test%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95%E6%8A%A5%E9%94%99/" title="解决Lombok引起的spring-test单元测试报错"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover2.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-10</div><div class="title">解决Lombok引起的spring-test单元测试报错</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/avatar.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Echo</div><div class="author-info__description">井蛙不可语于海。</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a><a href="/tags/"><div class="headline">標籤</div><div class="length-num">46</div></a><a href="/categories/"><div class="headline">分類</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/Echo-xzp"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:2838985911@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="tencent://AddContact/?fromId=45&amp;fromSubId=1&amp;subcmd=all&amp;uin=2838985911&amp;website=www.oicqzone.com" target="_blank" title="QQ"><i class="fab fa-qq"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">一个坐着喝酒的短衫人。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目錄</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E5%8F%91%E7%8E%B0"><span class="toc-number">1.</span> <span class="toc-text">问题发现</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="toc-number">2.</span> <span class="toc-text">问题解决</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8B%93%E5%B1%95"><span class="toc-number">3.</span> <span class="toc-text">问题拓展</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2023/07/24/Linux%E5%A4%9A%E7%A7%81%E9%92%A5%E7%AE%A1%E7%90%86/" title="Linux多私钥管理"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover5.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux多私钥管理"/></a><div class="content"><a class="title" href="/2023/07/24/Linux%E5%A4%9A%E7%A7%81%E9%92%A5%E7%AE%A1%E7%90%86/" title="Linux多私钥管理">Linux多私钥管理</a><time datetime="2023-07-24T08:17:15.000Z" title="發表於 2023-07-24 16:17:15">2023-07-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/20/%E5%88%A9%E7%94%A8JAXB%E5%B0%86XML%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8CJava%E5%AF%B9%E8%B1%A1%E4%BA%92%E8%BD%AC%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="利用JAXB将XML字符串和Java对象互转学习记录"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover7.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="利用JAXB将XML字符串和Java对象互转学习记录"/></a><div class="content"><a class="title" href="/2023/07/20/%E5%88%A9%E7%94%A8JAXB%E5%B0%86XML%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%92%8CJava%E5%AF%B9%E8%B1%A1%E4%BA%92%E8%BD%AC%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" title="利用JAXB将XML字符串和Java对象互转学习记录">利用JAXB将XML字符串和Java对象互转学习记录</a><time datetime="2023-07-20T02:44:04.000Z" title="發表於 2023-07-20 10:44:04">2023-07-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%91%E9%80%81http%E8%AF%B7%E6%B1%82%E6%97%B6JsonObject%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5%E8%B8%A9%E5%9D%91/" title="多线程发送http请求时JsonObject数据不同步踩坑"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="多线程发送http请求时JsonObject数据不同步踩坑"/></a><div class="content"><a class="title" href="/2023/07/18/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%91%E9%80%81http%E8%AF%B7%E6%B1%82%E6%97%B6JsonObject%E6%95%B0%E6%8D%AE%E4%B8%8D%E5%90%8C%E6%AD%A5%E8%B8%A9%E5%9D%91/" title="多线程发送http请求时JsonObject数据不同步踩坑">多线程发送http请求时JsonObject数据不同步踩坑</a><time datetime="2023-07-18T06:38:14.000Z" title="發表於 2023-07-18 14:38:14">2023-07-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/07/11/%E7%94%B1js%E5%BC%95%E5%8F%91%E7%9A%84%E5%AF%B9%E5%BC%82%E6%AD%A5-%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%98%BB%E5%A1%9E-%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%9A%84%E6%80%9D%E8%80%83/" title="由JS引发的对异步/同步与阻塞/非阻塞的思考"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover8.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="由JS引发的对异步/同步与阻塞/非阻塞的思考"/></a><div class="content"><a class="title" href="/2023/07/11/%E7%94%B1js%E5%BC%95%E5%8F%91%E7%9A%84%E5%AF%B9%E5%BC%82%E6%AD%A5-%E5%90%8C%E6%AD%A5%E4%B8%8E%E9%98%BB%E5%A1%9E-%E9%9D%9E%E9%98%BB%E5%A1%9E%E7%9A%84%E6%80%9D%E8%80%83/" title="由JS引发的对异步/同步与阻塞/非阻塞的思考">由JS引发的对异步/同步与阻塞/非阻塞的思考</a><time datetime="2023-07-11T07:05:42.000Z" title="發表於 2023-07-11 15:05:42">2023-07-11</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2023/06/16/%E4%B9%A0%E6%A6%82%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/" title="湖南师大习概复习总结"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/img/cover4.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="湖南师大习概复习总结"/></a><div class="content"><a class="title" href="/2023/06/16/%E4%B9%A0%E6%A6%82%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/" title="湖南师大习概复习总结">湖南师大习概复习总结</a><time datetime="2023-06-16T11:54:37.000Z" title="發表於 2023-06-16 19:54:37">2023-06-16</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By Echo</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主題 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="閱讀模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="簡繁轉換">繁</button><button id="darkmode" type="button" title="淺色和深色模式轉換"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="單欄和雙欄切換"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="設定"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目錄"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到頂部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><div class="js-pjax"></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
