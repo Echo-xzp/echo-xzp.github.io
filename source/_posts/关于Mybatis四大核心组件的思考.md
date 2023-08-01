@@ -185,12 +185,7 @@ SqlSession sqlSession = sqlSessionFactory.openSession(ExecutorType.BATCH);
 
    - 它负责准备和执行针对数据库的SQL语句。
 
-   - ```
-     Executor
-     ```
-
-      接口有两个主要的实现类：
-
+   - `Executor` 接口有两个主要的实现类：
      - `SimpleExecutor`：它是MyBatis用于非批量SQL操作的默认执行器。它直接执行SQL语句。
      - `BatchExecutor`：它用于批量操作，比如批量插入、更新和删除。它将多个SQL语句组合在一起，并作为批量执行。
 
