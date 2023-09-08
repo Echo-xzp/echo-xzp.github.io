@@ -2,7 +2,7 @@
 title: nacos面试总结(其一)
 date: 2023-09-05 09:10:10
 tags: [Java,Spring Cloud,Spring Cloud Alibaba,Nacos.nacos]
-categories: Javas
+categories: Java
 ---
 
 ## 什么是`nacos`？`nacos`有什么作用？
