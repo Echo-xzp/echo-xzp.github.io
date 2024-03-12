@@ -1,8 +1,14 @@
 ---
 title: nacos面试总结 其二
-date: 2023-09-17 09:39:00
-tags: [Spring,Spring Cloud Alibaba,Nacos,nacos,面试]
+tags:
+  - Spring
+  - Spring Cloud Alibaba
+  - Nacos
+  - nacos
+  - 面试
 categories: Java
+abbrlink: 78051f18
+date: 2023-09-17 09:39:00
 ---
 
 # 为什么要有配置中心？

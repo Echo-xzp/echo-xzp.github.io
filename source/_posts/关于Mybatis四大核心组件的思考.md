@@ -1,8 +1,13 @@
 ---
 title: 关于Mybatis四大核心组件的思考
-date: 2023-08-01 14:42:32
-tags: [Mybatis,Spring,Java,SqlSession]
+tags:
+  - Mybatis
+  - Spring
+  - Java
+  - SqlSession
 categories: Java
+abbrlink: f90fe56e
+date: 2023-08-01 14:42:32
 ---
 
 # 问题产生

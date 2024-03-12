@@ -1,8 +1,12 @@
 ---
 title: 解决MybatisPlus无法自动填充的问题
-date: 2023-04-02 18:31:08
-tags: [Java,Mybatis,"Mybatis Plus"]
+tags:
+  - Java
+  - Mybatis
+  - Mybatis Plus
 categories: Java
+abbrlink: 729736eb
+date: 2023-04-02 18:31:08
 ---
 
 MP能够通过注解：`@TableField(fill = FieldFill.INSERT)`  给数据对象指定填充类型，并通过注入`MetaObjectHandler` 完成自动填充:

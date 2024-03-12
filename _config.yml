@@ -16,7 +16,12 @@ email: 2838985911@qq.com
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: 'https://www.hitagi.icu'
 root: /
-permalink: :year/:month/:day/:title/
+# permalink: :year/:month/:day/:title/
+permalink: posts/:abbrlink/
+# abbrlink config
+abbrlink:
+  alg: crc32      # support crc16(default) and crc32
+  rep: hex        # support dec(default) and hex
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
@@ -106,3 +111,23 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   type: ''
+
+nofollow:
+  enable: true
+  field: site
+  exclude:
+    - 'exclude1.com' # 白名单
+
+feed:
+  enable: true
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+  order_by: -date
+  icon: icon.png
+  autodiscovery: true
+  template:

@@ -1,8 +1,13 @@
 ---
 title: MySQL由于表名大写而查不到数据
-date: 2023-10-16 15:37:03
-tags: [Java,MySQL,Windows,Linux]
+tags:
+  - Java
+  - MySQL
+  - Windows
+  - Linux
 categories: Java
+abbrlink: 68b2bfd5
+date: 2023-10-16 15:37:03
 ---
 
 # 问题描述

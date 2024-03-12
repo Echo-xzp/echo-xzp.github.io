@@ -1,8 +1,13 @@
 ---
 title: 解决Docker中Tomcat部署war失败
-date: 2023-11-23 10:53:26
-tags: [Spring,Tomcat,war,docker]
+tags:
+  - Spring
+  - Tomcat
+  - war
+  - docker
 categories: Java
+abbrlink: 6f162e5f
+date: 2023-11-23 10:53:26
 ---
 
 # 问题描述

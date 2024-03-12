@@ -1,8 +1,14 @@
 ---
 title: Spring异步支持
-date: 2023-08-17 15:44:48
-tags: [Spring,Java,异步,Async,CompletableFuture]
+tags:
+  - Spring
+  - Java
+  - 异步
+  - Async
+  - CompletableFuture
 categories: Java
+abbrlink: 7e9e3df7
+date: 2023-08-17 15:44:48
 ---
 
 # 问题产生

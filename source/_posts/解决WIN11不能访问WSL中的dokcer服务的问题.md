@@ -1,8 +1,13 @@
 ---
 title: 解决WIN11不能访问WSL中的docker服务的问题
-date: 2023-12-10 14:26:38
-tags: [Windows11,wsl,Debian,docker]
+tags:
+  - Windows11
+  - wsl
+  - Debian
+  - docker
 categories: Linux
+abbrlink: a5ca3ac6
+date: 2023-12-10 14:26:38
 ---
 
 # 问题描述

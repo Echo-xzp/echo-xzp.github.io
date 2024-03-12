@@ -1,8 +1,12 @@
 ---
 title: 多线程发送http请求时JsonObject数据不同步踩坑
-date: 2023-07-18 14:38:14
-tags: [Java,多线程,JsonObject]
+tags:
+  - Java
+  - 多线程
+  - JsonObject
 categories: Java
+abbrlink: a8b409a0
+date: 2023-07-18 14:38:14
 ---
 
 # 问题描述

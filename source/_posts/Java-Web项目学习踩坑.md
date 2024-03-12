@@ -1,9 +1,13 @@
 ---
 title: Java Web项目学习踩坑
-date: 2022-07-20 03:50:54
-tags: [Java,JavaWeb,Tomcat]
+tags:
+  - Java
+  - JavaWeb
+  - Tomcat
 categories: Java
 cover: /img/cover5.png
+abbrlink: ec4db7f6
+date: 2022-07-20 03:50:54
 ---
 
 

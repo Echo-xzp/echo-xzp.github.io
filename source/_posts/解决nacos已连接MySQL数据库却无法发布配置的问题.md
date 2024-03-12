@@ -1,8 +1,12 @@
 ---
 title: 解决nacos已连接MySQL数据库却无法发布配置的问题
-date: 2023-03-17 15:53:54
-tags: [nacos,mysql,"Spring Cloud"]
+tags:
+  - nacos
+  - mysql
+  - Spring Cloud
 categories: Java
+abbrlink: 622fd08f
+date: 2023-03-17 15:53:54
 ---
 
 lz今天在docker里面部署nacos的时候遇到了一个问题，就是*nacos 已连接MySQL数据库却无法发布配置*。

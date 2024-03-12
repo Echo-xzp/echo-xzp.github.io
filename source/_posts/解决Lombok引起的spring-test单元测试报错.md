@@ -1,9 +1,12 @@
 ---
 title: 解决Lombok引起的spring-test单元测试报错
-date: 2023-03-10 11:06:54
-tags: ["Java","Java Web","Spring"]
+tags:
+  - Java
+  - Java Web
+  - Spring
 categories: Java
-
+abbrlink: dbd0a823
+date: 2023-03-10 11:06:54
 ---
 
 今天进行Spring单元测试的时候遇到了一个报错：

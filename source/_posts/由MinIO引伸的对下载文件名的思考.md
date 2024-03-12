@@ -1,8 +1,12 @@
 ---
 title: 由MinIO引伸的对下载文件名的思考
-date: 2024-03-07 16:05:11
-tags: [Java,MinIO,对象储存]
+tags:
+  - Java
+  - MinIO
+  - 对象储存
 categories: Java
+abbrlink: a86c5036
+date: 2024-03-07 16:05:11
 ---
 
 # 问题描述

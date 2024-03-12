@@ -1,8 +1,12 @@
 ---
 title: 利用JAXB将XML字符串和Java对象互转学习记录
-date: 2023-07-20 10:44:04
-tags: [Java,xml,JAXB]
+tags:
+  - Java
+  - xml
+  - JAXB
 categories: Java
+abbrlink: c1ffd960
+date: 2023-07-20 10:44:04
 ---
 
 # 代码实现

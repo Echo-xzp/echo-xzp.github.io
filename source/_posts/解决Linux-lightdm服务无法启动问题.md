@@ -1,8 +1,12 @@
 ---
 title: 解决Linux lightdm服务无法启动问题
-date: 2023-04-28 17:25:21
-tags: [Linux,"Arch Linux","lightdm"]
+tags:
+  - Linux
+  - Arch Linux
+  - lightdm
 categories: Linux
+abbrlink: e0c49d2a
+date: 2023-04-28 17:25:21
 ---
 
  博主在玩*archlinux*的时候选择了用*lightdm*做我的登录窗口管理器

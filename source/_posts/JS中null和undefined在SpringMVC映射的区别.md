@@ -1,8 +1,14 @@
 ---
 title: JS中null和undefined在Spring MVC映射的区别
-date: 2023-10-17 16:21:20
-tags: [Java,Spring,Spring MVC,JS,前端]
+tags:
+  - Java
+  - Spring
+  - Spring MVC
+  - JS
+  - 前端
 categories: Java
+abbrlink: bef4573
+date: 2023-10-17 16:21:20
 ---
 
 # 问题描述

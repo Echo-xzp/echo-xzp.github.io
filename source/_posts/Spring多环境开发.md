@@ -1,8 +1,12 @@
 ---
 title: Spring多环境开发
-date: 2023-08-05 10:05:00
-tags: [Spring,Maven,多环境]
+tags:
+  - Spring
+  - Maven
+  - 多环境
 categories: Java
+abbrlink: 638285de
+date: 2023-08-05 10:05:00
 ---
 
 # 需求分析

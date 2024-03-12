@@ -1,8 +1,12 @@
 ---
 title: Linux一般用户去掉sudo权限使用docker的方法
-date: 2023-05-29 10:23:50
-tags: [Linux,docker,"Arch Linux"]
+tags:
+  - Linux
+  - docker
+  - Arch Linux
 categories: Linux
+abbrlink: 68633db7
+date: 2023-05-29 10:23:50
 ---
 
 在Linux中安装Docker后，每次使用docker都要添加`sudo`命令，这样既不方便而且在操作的时候可能还会由于权限问题导致各种问题。虽然可以通过切换`root`用户来解决，但是在Linux中直接使用`root`用户操作系统本身就是一种不太安全的行为。那么如何是一般用户不用`sudo`命令也能操作docker呢？

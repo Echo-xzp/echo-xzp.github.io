@@ -1,8 +1,10 @@
 ---
 title: 解决Java打包后转码错误
-date: 2022-10-09 14:37:44
-tags: [Java]
+tags:
+  - Java
 categories: Java
+abbrlink: a6abfa2c
+date: 2022-10-09 14:37:44
 ---
 
 # 解决使用Java  URL.encode将中文转码打包运行时自动添加了+号

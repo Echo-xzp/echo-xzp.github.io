@@ -1,8 +1,15 @@
 ---
 title: 解决ribborn未指定负载均衡策略造成的微服务无法访问的问题
-date: 2023-03-22 21:12:44
-tags: [Java,JavaWeb,"Spring CLoud","Spring Cloud Alibaba",nacos,ribborn]
+tags:
+  - Java
+  - JavaWeb
+  - Spring CLoud
+  - Spring Cloud Alibaba
+  - nacos
+  - ribborn
 categories: Java
+abbrlink: c97b61c0
+date: 2023-03-22 21:12:44
 ---
 
 lz在docker部署微服务的时候遇到了不少问题。

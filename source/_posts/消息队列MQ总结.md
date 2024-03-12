@@ -1,8 +1,13 @@
 ---
 title: 消息队列MQ总结 其一
-date: 2023-09-08 19:06:19
-tags: [MQ,消息队列,Kafka,面试]
+tags:
+  - MQ
+  - 消息队列
+  - Kafka
+  - 面试
 categories: Java
+abbrlink: 4790b552
+date: 2023-09-08 19:06:19
 ---
 
 # 什么是消息队列？

@@ -1,8 +1,12 @@
 ---
 title: Linux多私钥管理
-date: 2023-07-24 16:17:15
-tags: [Linux,ssh,CentOS]
+tags:
+  - Linux
+  - ssh
+  - CentOS
 categories: Linux
+abbrlink: '33736219'
+date: 2023-07-24 16:17:15
 ---
 
 # 需求分析

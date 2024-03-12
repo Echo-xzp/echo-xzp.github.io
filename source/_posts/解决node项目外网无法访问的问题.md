@@ -1,8 +1,11 @@
 ---
 title: 解决node项目外网无法访问的问题
-date: 2023-03-21 21:30:42
-tags: [前端,nodejs]
+tags:
+  - 前端
+  - nodejs
 categories: 前端
+abbrlink: 51ecfb0e
+date: 2023-03-21 21:30:42
 ---
 
 lz在docker里面部署node前端项目的时候遇到了项目端口外网无法访问的问题。

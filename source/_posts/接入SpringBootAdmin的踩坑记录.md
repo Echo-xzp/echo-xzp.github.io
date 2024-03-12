@@ -1,8 +1,13 @@
 ---
 title: 接入Spring Boot Admin的踩坑记录
-date: 2023-05-23 10:47:57
-tags: [Spring,"Spring Boot","Spring Boot Admin","Spring Boot Actuator"]
+tags:
+  - Spring
+  - Spring Boot
+  - Spring Boot Admin
+  - Spring Boot Actuator
 categories: Java
+abbrlink: 88126f7e
+date: 2023-05-23 10:47:57
 ---
 
 

@@ -1,8 +1,12 @@
 ---
 title: 解决WSL中Nacos无法连接到Mysql数据库的问题
-date: 2022-12-28 18:41:29
-tags: [wsl,linux,nacos]
+tags:
+  - wsl
+  - linux
+  - nacos
 categories: Linux
+abbrlink: 9ecb896d
+date: 2022-12-28 18:41:29
 ---
 
 lz今天想在wsl中启动nacos，由于window上已经安装了mysql了，秉着wsl中共享端口的想法，在配置mysql我就连接连接本机的mysql,但是启动的时候始终报错，无法顺利连接到数据库。

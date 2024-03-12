@@ -1,8 +1,11 @@
 ---
 title: 解决Spring容器自调引起的依赖冲突
-date: 2023-04-10 19:57:17
-tags: [Spring,"Spring 事务"]
+tags:
+  - Spring
+  - Spring 事务
 categories: Java
+abbrlink: 13af8a62
+date: 2023-04-10 19:57:17
 ---
 
 lz今天在处理Spring事务的时候遇到一个有意思的坑。

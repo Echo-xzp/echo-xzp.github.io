@@ -1,8 +1,11 @@
 ---
 title: Spring Maven模块依赖异常问题踩坑
-date: 2023-04-07 18:59:42
-tags: [Spring,maven]
+tags:
+  - Spring
+  - maven
 categories: Java
+abbrlink: fc735702
+date: 2023-04-07 18:59:42
 ---
 
 在spring多模块开发时，遇到了一些莫名奇妙的问题。

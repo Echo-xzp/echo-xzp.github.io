@@ -1,8 +1,11 @@
 ---
 title: Spring非组件类读取配置文件
-date: 2023-08-16 15:28:13
-tags: [Java,Spring]
+tags:
+  - Java
+  - Spring
 categories: Java
+abbrlink: cc267d2
+date: 2023-08-16 15:28:13
 ---
 
 # 需求分析

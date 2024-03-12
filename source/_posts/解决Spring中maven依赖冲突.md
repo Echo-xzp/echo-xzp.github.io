@@ -1,8 +1,13 @@
 ---
 title: 解决Spring中maven依赖冲突
-date: 2023-03-09 20:12:15
-tags: [spring,java,"JavaWeb",maven]
+tags:
+  - spring
+  - java
+  - JavaWeb
+  - maven
 categories: Java
+abbrlink: f32ff4e7
+date: 2023-03-09 20:12:15
 ---
 
 lz今天做微服务的时候刚启动项目测试，便遇到了：

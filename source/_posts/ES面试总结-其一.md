@@ -1,8 +1,13 @@
 ---
 title: ES面试总结 其一
-date: 2023-09-17 20:49:58
-tags: [Java,面试,ES,ElasticSearch]
+tags:
+  - Java
+  - 面试
+  - ES
+  - ElasticSearch
 categories: Java
+abbrlink: b08dcadb
+date: 2023-09-17 20:49:58
 ---
 
 # 什么是ES？

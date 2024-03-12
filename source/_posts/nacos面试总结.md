@@ -1,8 +1,13 @@
 ---
 title: nacos面试总结(其一)
-date: 2023-09-05 09:10:10
-tags: [Java,Spring Cloud,Spring Cloud Alibaba,Nacos.nacos]
+tags:
+  - Java
+  - Spring Cloud
+  - Spring Cloud Alibaba
+  - Nacos.nacos
 categories: Java
+abbrlink: ff706a7f
+date: 2023-09-05 09:10:10
 ---
 
 ## 什么是`nacos`？`nacos`有什么作用？

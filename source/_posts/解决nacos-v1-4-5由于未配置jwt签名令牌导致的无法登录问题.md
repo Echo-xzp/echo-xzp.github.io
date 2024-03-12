@@ -1,8 +1,13 @@
 ---
 title: 解决nacos-v1.4.5由于未配置jwt签名令牌导致的无法登录问题
-date: 2023-05-30 14:42:34
-tags: [nacos,Spring,"Spring Cloud","Spring Cloud Alibaba"]
+tags:
+  - nacos
+  - Spring
+  - Spring Cloud
+  - Spring Cloud Alibaba
 categories: Java
+abbrlink: b7f3dd78
+date: 2023-05-30 14:42:34
 ---
 
 # 问题描述

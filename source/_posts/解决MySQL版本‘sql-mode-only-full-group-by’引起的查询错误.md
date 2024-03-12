@@ -1,8 +1,11 @@
 ---
 title: 解决MySQL版本‘sql_mode=only_full_group_by’引起的查询错误
-date: 2023-05-06 16:49:42
-tags: [mysql,Java]
+tags:
+  - mysql
+  - Java
 categories: Java
+abbrlink: c0d9da45
+date: 2023-05-06 16:49:42
 ---
 
 博主在部署一个项目后进行测试，发现了一个界面报服务器500错误，于是查看报错误日志：
