@@ -7,7 +7,7 @@ tags:
   - 同步
   - 阻塞
   - 非阻塞
-categories: 杂项
+categories: 前端
 abbrlink: 1d4fb918
 date: 2023-07-11 15:05:42
 ---

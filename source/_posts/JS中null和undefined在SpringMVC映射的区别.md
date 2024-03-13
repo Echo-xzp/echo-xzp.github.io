@@ -92,7 +92,7 @@ public String userDelete(PatientsBaseInfoVO user){
 >    ```javascript
 >    Boolean(null);        // false
 >    Boolean(undefined);   // false
->    
+>          
 >    if (null || undefined) {
 >        // 这个条件不会被执行
 >    }

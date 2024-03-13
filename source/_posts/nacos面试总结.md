@@ -4,7 +4,8 @@ tags:
   - Java
   - Spring Cloud
   - Spring Cloud Alibaba
-  - Nacos.nacos
+  - Nacos
+  - nacos
 categories: Java
 abbrlink: ff706a7f
 date: 2023-09-05 09:10:10
