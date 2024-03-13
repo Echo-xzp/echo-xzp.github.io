@@ -149,10 +149,10 @@ index_post_content:
 # anchor
 anchor:
   button:
-    enable: false
+    enable: true
     always_show: false
     icon: # the unicode value of Font Awesome icon, such as '\3423'
-  auto_update: false # when you scroll in post, the URL will update according to header id.
+  auto_update: true # when you scroll in post, the URL will update according to header id.
 
 # figcaption (圖片描述文字)
 photofigcaption: false
@@ -730,7 +730,7 @@ ClickShowText:
     # - I
     # - LOVE
     # - YOU
-  fontSize: 15px
+  fontSize: 16px
   random: false
   mobile: false
 
@@ -927,7 +927,7 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-      - <link rel="stylesheet" href="/static/css/fonts/font.css">  # 字体
+      - <link rel="stylesheet" href="/static/css/font.css">  # 字体
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
