@@ -982,9 +982,10 @@ CDN:
     # katex:
     # katex_copytex:
     # mermaid:
-    # canvas_ribbon:
-    # canvas_fluttering_ribbon:
-    # canvas_nest:
+    canvas_ribbon: https://jsdelivr.pai233.top/npm/butterfly-extsrc@1/dist/canvas-ribbon.min.js
+    canvas_fluttering_ribbon: https://jsdelivr.pai233.top/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js
+    canvas_nest: https://jsdelivr.pai233.top/npm/butterfly-extsrc@1/dist/canvas-nest.min.js
+
     lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
     instantpage: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js
     typed: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js
