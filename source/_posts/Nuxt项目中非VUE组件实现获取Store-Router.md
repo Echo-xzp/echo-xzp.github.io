@@ -1,8 +1,17 @@
 ---
 title: Nuxt项目中非VUE组件实现获取Store/Router
-date: 2024-03-19 16:21:06
-tags: [NuxtJS,nuxt,Vue,VueX,前端,JS,NodeJS,node]
+tags:
+  - NuxtJS
+  - nuxt
+  - Vue
+  - VueX
+  - 前端
+  - JS
+  - NodeJS
+  - node
 categories: 前端
+abbrlink: dd921de3
+date: 2024-03-19 16:21:06
 ---
 
 # 需求起源
