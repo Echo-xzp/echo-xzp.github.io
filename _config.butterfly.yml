@@ -1010,7 +1010,7 @@ CDN:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    fontawesome: https://lib.baomitu.com/font-awesome/6.0.0/css/all.min.css
+    fontawesome: https://lib.baomitu.com/font-awesome/7.0.0/css/all.min.css
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
     justifiedGallery_js: https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
