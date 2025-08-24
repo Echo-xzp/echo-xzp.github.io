@@ -962,7 +962,7 @@ CDN:
     # main_css:
     # main:
     # utils:
-    # jquery: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/jquery/3.6.0/jquery.min.js
+    # jquery: https://lib.baomitu.com/jquery/3.6.0/jquery.min.js
     # translate: https://cdn1.tianli0.top/npm/js-heo@1.0.6/translate/tw_cn.js
     # local_search:
     # algolia_js:
@@ -971,14 +971,14 @@ CDN:
     # docsearch_js:
     # docsearch_css:
     pjax: https://lib.baomitu.com/pjax/0.2.8/pjax.min.js
-    gitalk: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/gitalk/1.7.2/gitalk.min.js
-    gitalk_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/gitalk/1.7.2/gitalk.min.css
+    gitalk: https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.js
+    gitalk_css: https://lib.baomitu.com/gitalk/1.7.2/gitalk.min.css
     # blueimp_md5:
-    valine: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/valine/1.4.16/Valine.min.js
+    valine: https://lib.baomitu.com/valine/1.4.16/Valine.min.js
     # disqusjs:
     # disqusjs_css:
-    twikoo: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/twikoo/1.4.18/twikoo.all.min.js
-    waline_js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/waline/1.5.4/Waline.min.js
+    twikoo: https://lib.baomitu.com/twikoo/1.4.18/twikoo.all.min.js
+    waline_js: https://lib.baomitu.com/waline/1.5.4/Waline.min.js
     # waline_css:
     # giscus:
     sharejs: https://lib.baomitu.com/social-share.js/1.0.16/js/social-share.min.js
@@ -991,28 +991,28 @@ CDN:
     canvas_fluttering_ribbon: https://cdn.bootcdn.net/ajax/libs/butterfly-extsrc/1.1.4/canvas-fluttering-ribbon.min.js
     canvas_nest: https://cdn.bootcdn.net/ajax/libs/butterfly-extsrc/1.1.4/canvas-nest.min.js
 
-    lazyload: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/vanilla-lazyload/17.3.1/lazyload.iife.min.js
-    instantpage: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/instant.page/5.1.0/instantpage.min.js
-    typed: https://lf9-cdn-tos.bytecdntp.com/cdn/expire-1-M/typed.js/2.0.12/typed.min.js
-    pangu: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/pangu/4.0.7/pangu.min.js
-    # fancybox_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.css
-    # fancybox: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/fancybox/3.5.7/jquery.fancybox.min.js
+    lazyload: https://lib.baomitu.com/vanilla-lazyload/17.3.1/lazyload.iife.min.js
+    instantpage: https://lib.baomitu.com/instant.page/5.1.0/instantpage.min.js
+    typed: https://lib.baomitu.com/typed.js/2.0.12/typed.min.js
+    pangu: https://lib.baomitu.com/pangu/4.0.7/pangu.min.js
+    # fancybox_css: https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css
+    # fancybox: https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js
     # fancybox_css: https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.min.css
     # fancybox: https://cdn.staticfile.org/fancyapps-ui/4.0.31/fancybox.umd.min.js
-    medium_zoom: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/medium-zoom/1.0.6/medium-zoom.min.js
-    snackbar_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.css
-    snackbar: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/node-snackbar/0.1.16/snackbar.min.js
+    medium_zoom: https://lib.baomitu.com/medium-zoom/1.0.6/medium-zoom.min.js
+    snackbar_css: https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.css
+    snackbar: https://lib.baomitu.com/node-snackbar/0.1.16/snackbar.min.js
     # activate_power_mode:
     # fireworks:
     # click_heart:
     # ClickShowText:
-    fontawesome: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css
+    fontawesome: https://lib.baomitu.com/font-awesome/6.0.0/css/all.min.css
     # flickr_justified_gallery_js:
     # flickr_justified_gallery_css:
-    justifiedGallery_js: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
-    justifiedGallery_css: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/justifiedGallery/3.8.1/css/justifiedGallery.min.css
-    aplayer_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.css
-    aplayer_js: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/aplayer/1.10.1/APlayer.min.js
+    justifiedGallery_js: https://lib.baomitu.com/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js
+    justifiedGallery_css: https://lib.baomitu.com/justifiedGallery/3.8.1/css/justifiedGallery.min.css
+    aplayer_css: https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.css
+    aplayer_js: https://lib.baomitu.com/aplayer/1.10.1/APlayer.min.js
     meting_js: https://cdn1.tianli0.top/npm/js-heo@1.0.12/metingjs/Meting.min.js
     prismjs_js: https://cdn1.tianli0.top/npm/prismjs@1.1.0/prism.js
     prismjs_lineNumber_js: https://cdn1.tianli0.top/npm/prismjs/plugins/line-numbers/prism-line-numbers.min.js
@@ -1021,8 +1021,8 @@ CDN:
     # artalk_css:
     # busuanzi:
     # abcjs_basic_js:
-    disqusjs: https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/disqusjs/1.3.0/disqus.js
-    disqusjs_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/disqusjs/1.3.0/disqusjs.css
+    disqusjs: https://lib.baomitu.com/disqusjs/1.3.0/disqus.js
+    disqusjs_css: https://lib.baomitu.com/disqusjs/1.3.0/disqusjs.css
     algolia_js: https://cdn1.tianli0.top/npm/js-heo@1.0.11/algolia/algolia.js
-    algolia_search: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/2.10.5/instantsearch.min.js
-    algolia_search_css: https://lf6-cdn-tos.bytecdntp.com/cdn/expire-1-M/instantsearch.js/2.10.5/instantsearch.min.css
+    algolia_search: https://lib.baomitu.com/instantsearch.js/2.10.5/instantsearch.min.js
+    algolia_search_css: https://lib.baomitu.com/instantsearch.js/2.10.5/instantsearch.min.css
