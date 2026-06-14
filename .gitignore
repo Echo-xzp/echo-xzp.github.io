@@ -6,3 +6,7 @@ node_modules/
 public/
 .deploy*/
 _multiconfig.yml
+.obsidian/
+.vscode/
+.idea/
+*.sublime-project
