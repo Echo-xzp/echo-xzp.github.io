@@ -32,6 +32,6 @@
     "hexo-theme-butterfly": "^5.5.4",
     "hexo-theme-landscape": "^1.1.0",
     "hexo-wordcount": "^6.0.1",
-    "js-yaml": "^4.2.0"
+    "js-yaml": "^5.1.0"
   }
 }
