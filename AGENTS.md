@@ -1,5 +1,8 @@
 # Repository Guidelines
 
+## Conversation Focus
+This is a personal blog project. When answering questions in this directory, focus primarily on the blog articles and their subject matter rather than the implementation details of the Hexo blog framework or theme. Explain topics in a learning-oriented, interactive way, helping build understanding through clear explanations, examples, and appropriate guidance.
+
 ## Project Structure & Module Organization
 This repository is a Hexo blog. Main site settings live in `_config.yml`, while Butterfly theme overrides live in `_config.butterfly.yml`. Content is under `source/`: posts in `source/_posts/`, shared data in `source/_data/`, static images in `source/img/`, extra assets in `source/static/`, and standalone pages such as `source/about/` and `source/link/`. Reusable post templates are in `scaffolds/`. Small maintenance utilities live in `scripts/`. GitHub Actions for Pages deploy, mirroring, and IndexNow are in `.github/workflows/`.
 
